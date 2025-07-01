@@ -1,0 +1,14 @@
+Métodos de StringBuilder:
+
+- Constructores:
+  1. StringBuilder() -> Crea un StringBuilder vacío.
+  2. StringBuilder(int capacity) -> Crea un StringBuilder con capacidad específica.
+  3. StringBuilder(String str) -> Crea un StringBuilder con una cadena inicial.
+
+- setLength(int newLength): Cambia la longitud del StringBuilder.
+- ensureCapacity(int minimumCapacity): Asegura una capacidad mínima.
+- append(String str): Agrega una cadena al final.
+- insert(int offset, String str): Inserta una cadena en una posición específica.
+- delete(int start, int end): Elimina caracteres entre dos posiciones.
+- deleteCharAt(int index): Elimina un carácter en una posición específica.
+- reverse(): Invierte la cadena.

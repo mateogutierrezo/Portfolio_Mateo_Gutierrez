@@ -1,0 +1,75 @@
+Ejercicio 1
+x e y no se modifican, devuelve siempre 0.
+Resultado: 0
+
+Ejercicio 2
+Cantidad de nodos que no son hojas.
+Resultado: 4
+
+Ejercicio 3
+Suma de todas las etiquetas.
+Resultado: 28
+
+Ejercicio 4
+Devuelve 1 si la etiqueta está en el árbol.
+Resultado para unaEti = 1: 1
+
+Ejercicio 5.1 
+encuentraLinealUno(nombreAtributo, valorAtributo) : devuelve booleano
+comienzo 
+	resultado <- falso
+	si nombreAtributo == valorAtributo entonces
+		resultado <- verdadero
+	finSi
+	si hijoIzq <> nulo entonces
+		si hijoIzq.encuentraLinealUno(nombreAtributo, valorAtributo) entonces 
+			resultado <- verdadero
+		finSi
+	finSi
+	si hijoDer <> nulo entonces
+		si hijoDer.encuentraLinealUno(nombreAtributo, valorAtributo) entonces
+            		resultado <- verdadero
+        	finSi
+	finSi
+	devolver resultado
+fin
+
+Ejercicio 5.2
+encuentraLinealDos(nombreAtributo, valorAtributo) : devuelve booleano
+comienzo 
+	si nombreAtributo == valorAtributo entonces
+		devolver verdadero
+	finSi
+	si hijoIzq <> nulo entonces
+		si hijoIzq.encuentraLinealDos(nombreAtributo, valorAtributo) entonces 
+			devolver verdadero
+		finSi
+	finSi
+	si hijoDer <> nulo entonces
+		si hijoDer.encuentraLinealDos(nombreAtributo, valorAtributo) entonces
+            		devolver verdadero
+        	finSi
+	finSi
+	devolver falso
+fin
+
+Ejercicio 5.3
+encuentraLinealTres(nombreAtributo, valorAtributo) : devuelve nodo
+comienzo
+	si nombreAtributo == valorAtributo entonces
+		devolver this
+	finSi
+	si hijoIzq <> nulo entonces
+		resultadoIzq <- hijoIzq.encuentraLinealTres(nombreAtributo, valorAtributo)
+        	si resultadoIzq ≠ nulo entonces
+            		devolver resultadoIzq
+        	finSi
+	finSi
+	si hijoDer <> nulo entonces
+            	resultadoDer <- hijoDer.encuentraLinealTres(nombreAtributo, valorAtributo)
+        	si resultadoDer ≠ nulo entonces
+            		devolver resultadoDer
+        	finSi
+	finSi
+	devolver nulo
+fin

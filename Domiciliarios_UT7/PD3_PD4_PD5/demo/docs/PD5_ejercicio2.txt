@@ -1,0 +1,43 @@
+ordenTopologico
+
+precondiciones: 
+El grafo debe ser dirigido y acíclico (DAG).
+
+postcondiciones:
+Se devolverá una lista de vértices ordenada topológicamente, es decir, si existe una arista de u → v, 
+entonces u aparecerá antes que v en la lista.
+
+METODO DE GRAFO
+
+ordenTopologico() : lista de vertices
+COMIENZO
+    resultado ← lista vacía
+    PARA CADA vertice v HACER
+        desvisitar v
+    FINPARA
+    PARA CADA vertice v HACER
+        SI NO v.visitado ENTONCES
+            v.ordenTopologico(resultado)
+        FINSI
+    FINPARA
+    invertir(resultado)
+    RETORNAR resultado
+FIN 
+
+METODO DE VERTICE
+
+ordenTopologico(resultado) : procedure
+COMIENZO
+    visitado ← verdadero
+
+    PARA CADA adyacente ady HACER
+        w ← ady.destino
+        SI NO w.visitado ENTONCES
+            w.ordenTopologico(resultado)
+        FINSI
+    FINPARA
+    agregar ESTE VÉRTICE al final de resultado
+FIN
+
+
+O(n + m) siendo n el número de vertices y m el número de aristas.

@@ -1,0 +1,44 @@
+1)
+Se puede representar como un:
+Grafo no dirigido ponderado:
+    Vértices (nodos): Centros de Comunicación (CC1 a CC6)
+    Aristas (enlaces): Conexiones de fibra óptica entre pares de ciudades.
+    Pesos: Costos de conexión entre ciudades.
+
+El problema se resuelve encontrando el AAM, para esto se debe implementar el algoritmo de Prim o Kruskal.
+
+2)
+GND.Prim(): GND
+    V <- conjunto de vertices del GND
+    T <- conjunto vacío de aristas
+    U <- conjunto con el primer CC
+    mientras U != V hacer
+        sea (u,v) una arista de costo minimo de U a V-U 
+        T <- unir(T,(u,v))    
+        U <- unir(U,v)
+FIN    
+ 
+GND.KRUSKAL() : GND
+    Crear un grafo no dirigido vacío para el MST
+    Crear un conjunto disjunto para cada vértice
+    Ordenar todas las aristas por costo ascendente
+    Para cada arista (u, v) en orden ascendente:
+        Si u y v están en conjuntos disjuntos:
+            Añadir (u, v) al MST
+            Unir los conjuntos de u y v
+    Retornar el MST
+
+estructura auxiliar UnionFind:
+MAKE-SET(x):
+    padre[x] = x
+
+FIND(x):
+    Si padre[x] ≠ x:
+        padre[x] = FIND(padre[x])
+        Retornar padre[x]
+
+UNION(x, y):
+    raizX = FIND(x)
+    raizY = FIND(y)
+    padre[raizX] = raizY
+

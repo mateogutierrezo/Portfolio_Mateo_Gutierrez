@@ -1,0 +1,59 @@
+Obtener la clave inmediata anterior a una clave dada (pasada por parámetro) 
+Descripción: 
+Si la clave pasada por parámetro es menor a la actual se recorre hacia el subárbol izquierdo, siempre que no sea nulo.
+En otro caso, si el hijo derecho es nulo se retorna la clave del nodo actual.
+De no ser así se compara la clave del nodo actual con el resultado de moverse recursivamente hacia la derecha devolviendose 
+la clave mayor (más aproximada a la clave pasada por parámetro)
+
+Precondiciónes:
+Respeta las regas de los abb.
+
+Postcondiciones:
+Devuelve la clave inmediata anterior a una clave dada.
+Si no hay una clave anterior o el arbol está vacío devuelve nulo.
+
+Casos de prueba:
+Dado un abb vacío:
+si se inserta: 10, 5, 15, 3, 4
+claveAnteriorArbol(root, 3)
+devuelve: nulo
+
+claveAnteriorArbol(root, 6)
+devuelve: 5
+
+claveAnteriorArbol(root, 15)
+devuelve: 10
+
+claveAnteriorArbol(root, 20)
+devuelve: 15
+
+claveAnteriorNodo(nodo, unaClave) : devuelve TClave
+comienzo
+    si unaClave < nodo.clave entonces
+        si nodo.hijoIzq <> nulo entones
+            devolver claveAnterior(nodo.hijoIzq, unaClave)
+        finSi
+        devolver nulo;
+    siNo 
+        si nodo.hijoDer <> nulo entonces
+            otraClave = claveAnterior(nodo.hijoDer, unaClave)
+            si nodo.clave > otraClave entonces
+                devolver nodo.clave
+            siNo 
+                devolver otraClave
+            finSi
+        finSi
+        devolver nodo.clave
+    finSi
+fin
+
+claveAnteriorArbol(root, unaClave) :  devuelve TClave
+comienzo
+    si root == nulo entonces
+        devolver nulo
+    finSi
+    devolver claveAnteriorNodo(root, unaClave)
+fin
+
+Orden del tiempo de ejecución: O(n)
+Puede que deba recorrer todos los elementos en un árbol totalmente desbalanceado.

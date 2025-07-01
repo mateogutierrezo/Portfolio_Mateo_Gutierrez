@@ -1,0 +1,18 @@
+Escriba un algoritmo basado en DFS para hallar la cantidad de componentes
+conexas de un Grafo.
+
+funcion GD.contarComponentesConexas():
+    contador ← 0
+
+    para cada vértice v en GD hacer
+        si v no está en visitado entonces
+            v.contarComponentesConexas()
+            contador ← contador + 1
+
+    devolver contador
+
+funcion v.contarComponentesConexas():
+    agregar v a visitado
+    para cada vecino u de v:
+        si u no está en visitado:
+            u.contarComponentesConexas()

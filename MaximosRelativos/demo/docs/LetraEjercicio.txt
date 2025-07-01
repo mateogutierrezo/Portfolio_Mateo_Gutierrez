@@ -1,0 +1,19 @@
+Ejercicio 11 Máximos relativos
+
+Llamamos máximos relativos de una pila aquellos elementos que al ser apilados eran mayores estrictos que
+todos los que ya estaban en la pila.
+Por ejemplo, si en una pila inicialmente vacía se apilan los números 5, 4, 8, 2, 6, 14, 14, y 8, en ese orden,
+los máximos relativos son el 5, el 8 y el 14 (notar que el primer elemento en ser apilado es un máximo
+relativo porque no había ninguno mayor o igual a él).
+Se debe desarrollar una función que dada una pila parámetro p devuelva una pila resultado, r, que contenga
+los máximos relativos de p. Los elementos de r deben quedar de tal manera que si se desapilan se obtienen
+en orden creciente. En el ejemplo anterior de r se desapilarían 5, 8 y 14, en ese orden.
+El tiempo de ejecución de la función debe ser O(n), donde n es la cantidad de elementos de p.
+Se pueden usar variables auxiliares simples, pero no se pueden usar otras estructuras auxiliares (además
+del parámetro y el resultado), como otra pila, cola o lista.
+Al terminar la pila parámetro p debe quedar vacía.
+
+(a) Implemente la función
+Pila maximosRelativos ( Pila p )
+
+(b) Fundamente por qué se cumple el tiempo de ejecución pedido.

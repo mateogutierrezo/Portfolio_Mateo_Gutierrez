@@ -1,0 +1,41 @@
+Insertar(unaEtiqueta, etiquetaPadre) : devuelve “true” si la inserción se hace correctamente, o 
+“false” si no se puede realizar. 
+
+Lenguaje natural: 
+Si etiqutaPadre es vacía se inserta una etiqueta como nueva raíz del árbol.
+Si no, se busca etiquetaPadre y se inserta unaEtiqueta como un nuevo hijo.
+
+Precondiciones:
+El árbol es generico.
+unaEtiqueta no es nulo.
+
+Postcondiciones:
+devuelve “true” si la inserción se hace correctamente.
+“false” si no se puede realizar. 
+
+TArbolGenerico.insertar(unaEtiqueta, etiquetaPadre)
+comienzo
+    si etiquetaPadre = nulo entonces
+        nuevoNodo <- Nodo(unaEtiqueta)
+        nuevoNodo.hijos.agregar(raiz)
+        raiz <- nuevoNodo
+        devolver true
+    siNo
+        devolver raiz.insertar(unaEtiqueta, etiquetaPadre)
+    finSi
+fin
+
+TNodoArbolGenerico.insertar(unaEtiqueta, etiquetaPadre) : booleano
+comienzo
+    resultado <- false
+    si nodoActual.etiqueta = etiquetaPadre entonces
+        nuevoNodo <- Nodo(unaEtiqueta)
+        nodoActual.hijos.agregar(nuevoNodo)
+        resultado <- true
+    siNo
+        para cada hijo de nodoActual hacer
+            resultado <- hijo.insertar(unaEtiqueta, etiquetaPadre)
+        finPara
+    finSi
+    devolver resultado
+fin

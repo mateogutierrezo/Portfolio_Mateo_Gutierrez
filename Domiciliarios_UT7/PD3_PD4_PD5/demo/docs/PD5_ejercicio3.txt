@@ -1,0 +1,61 @@
+METODO DE GRAFO
+
+esConexo(G: GrafoDirigido) : booleano
+COMIENZO
+    SI G.vertices está vacío ENTONCES
+        RETORNAR verdadero
+    FINSI
+    v ← cualquier vértice de G
+
+    PARA CADA VERTICE W HACER
+        w.visitado ← falso
+    FINPARA
+    contador ← 0
+    v.esConexo(contador)
+    SI contador <> cantidadVertices() ENTONCES
+        RETORNAR falso
+    FINSI
+    GT ← grafoTranspuesto(G)
+
+    PARA CADA vertice w HACER
+        w.visitado ← falso
+    FINPARA
+    contador ← 0
+    GT.vertices.get(v.etiqueta).esConexo(contador)
+    SI contador <> G.cantidadVertices() ENTONCES
+        RETORNAR falso
+    FINSI
+    RETORNAR verdadero
+FIN
+
+METODO DE VERTICE
+
+esConexo(contador) : procedure
+COMIENZO
+    v.visitado ← verdadero
+    contador ← contador + 1
+    
+    PARA CADA adyacente ady HACER
+        w ← ady.destino
+        SI NO w.visitado ENTONCES
+            DFSContador(w, contador)
+        FINSI
+    FINPARA
+FIN
+
+grafoTranspuesto(G) : TGrafoDirigido
+COMIENZO
+    GT ← nuevo TGrafoDirigido
+
+    PARA CADA vértice v EN G.vertices HACER
+        GT.insertarVertice(v.etiqueta, v.datos)
+    FINPARA
+    PARA CADA vértice v EN G.vertices HACER
+        PARA CADA ady ∈ v.adyacentes HACER
+            w ← ady.destino         +
+            costo ← ady.costo
+            GT.insertarArista(w.etiqueta, v.etiqueta, costo) 
+        FINPARA
+    FINPARA
+    RETORNAR GT
+FIN

@@ -1,0 +1,32 @@
+cantidadANivel
+
+Descripción:
+Recibe los parámetros nodo (nodo actual) y nivel (nivel del cual se desea saber la cantidad de nodos)
+si el nodo actual es nulo o la variable nivel es 0 devuelve 0.
+si la variable nivel es igual a 1 devuelve 1 (está en el nivel deseado)
+en otro caso devuelve el resultado de aplicar cantidadANivelNodo a los subárboles izquierdo y
+derecho, restando en 1 la variable nivel.
+
+Precondiciones:
+El árbol respeta las reglas de ABB.
+nivel >= 1
+
+Postcondiciones:
+Se devuelve la cantidad de nodos en el nivel pasado por parámetro.
+
+cantidadANivelNodo(nodo, nivel)
+comienzo
+    si nodo == nulo entonces
+        devolver 0
+    si nivel == 1 entonces
+        devolver 1
+    devolver cantidadANivelNodo(nodo.hijoIzq, nivel - 1) + cantidadANivelNodo(nodo.hijoDer, nivel - 1)
+fin
+
+cantidadANivelArbol(root, nivel)
+comienzo
+    devolver cantidadANivelNodo(root, nivel)
+fin
+
+orden de tiempo de ejecución O(n) ya que en el peor caso hay que recorrer todos los nodos si se desea 
+conocer la cantidad de nodos del último nivel.

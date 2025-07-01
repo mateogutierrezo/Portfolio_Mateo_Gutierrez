@@ -1,0 +1,37 @@
+EJERCICIO 1
+public static void EliminarEntradasNulas(Map map) {
+    map.values().removeIf(Objects::isNull);
+}
+
+EJERCICIO 2
+public static Map<String, String> invertir(Map<String, String> mapa) {
+    Map<String, String> invertido = new HashMap<>();
+    for (Map.Entry<String, String> e : mapa.entrySet())
+        if (invertido.put(e.getValue(), e.getKey()) != null)
+            throw new IllegalArgumentException("Valor duplicado: " + e.getValue());
+    return invertido;
+}
+
+
+EJERCICIO 3
+public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    List<String> lista = new ArrayList<>();
+    while (sc.hasNextLine()) lista.add(sc.nextLine());
+    lista.sort(Comparator.comparingInt(String::length).thenComparing(String::compareTo));
+    lista.forEach(System.out::println);
+}
+
+EJERCICIO 4
+public static void main(String[] args) throws IOException {
+    File file = new File(args[0]);
+    int lineSize = 40; 
+    int totalLines = (int) (file.length() / lineSize);
+    List<String> lines = new ArrayList<>(totalLines);
+    try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+        String line; while ((line = br.readLine()) != null) lines.add(line);
+    }
+    Collections.shuffle(lines);
+    int toPrint = Integer.parseInt(args[1]);
+    lines.stream().limit(toPrint).forEach(System.out::println);
+}

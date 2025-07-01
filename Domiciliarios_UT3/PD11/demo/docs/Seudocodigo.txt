@@ -1,0 +1,16 @@
+ordenaParesImpares()
+    Nuevo listaPares
+    Nuevo listaImpares
+    actual <- primero
+    mientras actual <> nulo hacer
+        si actual.dato es par entonces
+            listaPares.insertarOrdenado(actual.dato)
+        sino 
+            listaImpares.insertarOrdenado(actual.dato)
+        fin si
+        actual <- actual.siguiente
+    fin mientras
+    devolver listaImpares.concatenar(listaPares) //concatenar devuelve el resultado de asignarle el primer 
+fin                                              //elemento de listaPares al último elemento de listaImpares
+    
+

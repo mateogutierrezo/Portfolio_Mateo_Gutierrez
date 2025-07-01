@@ -1,0 +1,66 @@
+Insertar
+
+método de Nodo:
+
+Descripción:
+Se compara la etiqueta del nuevo nodo con la del nodo actual.
+Si es menor se inserta en el subárbol izquierdo.
+Si es mayor se inserta en el subárbol derecho.
+Si es igual no se inserta y se retorna falso.
+Se repite la recursividad hasta encontrar un lugar vacío donde insertar el nodo.
+
+Precondiciones:
+El árbol respeta las reglas del ABB.
+nodoActual no es nulo.
+
+Postcondiciones:
+El nodo se insertará respetando las reglas del ABB.
+
+Algortimo:
+insertarEnNodo(nodoActual, nodoNuevo)
+comienzo
+    si nodoNuevo.etiqueta < nodoActual.etiqueta entonces
+        si nodoActual.hijoIzq == nulo entonces  
+            nodoActual.hijoIzq <- nodoNuevo
+            devolver true
+        finSi
+        devolver insertar(nodoActual.hijoIzq, nodoNuevo)
+
+    siNoSi nodoNuevo.etiqueta > nodoActual.etiqueta entonces
+        si nodoActual.hijoDer == nulo entonces
+            nodoActual.hijoDer <- nodoNuevo
+            devolver true
+        finSi
+        devolver insertar(nodoActual.hijoDer, nodoNuevo)
+    siNo
+        devolver false
+    finSi
+fin
+
+
+método de árbol:
+
+Si el árbol está vacío se le asigna a la raíz en nuevo nodo,
+en caso contrario se llama al método insertar del nodo.
+
+Precondiciones:
+El árbol puede estar vacío.
+El arbol respeta las reglas del ABB.
+
+Postcondiciones:
+El nodo se insertará respetando las reglas del ABB.
+
+insertarEnArbol(root, nodoNuevo)
+comienzo
+    si root == nulo entonces
+        root <- nodoNuevo
+        devolver true
+    finSi
+    devolver insertarEnNodo(root, nodoNuevo)
+fin
+
+Orden de tiempo de ejecución
+O(log(n)) en el mejor caso (balanceado)
+O(n) en el peor caso (desbalanceado) si por ejemplo ocurre que siempre
+se inserta a la izquierda el árbol quedaría con forma de lista y para 
+volver a agregar un nodo a la izquierda se debería recorrer todos los nodos. 

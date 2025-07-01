@@ -1,0 +1,24 @@
+ColaCircular
+    frente      //primer elemento
+    final       //ultimo elemento
+    cantidad    //cantidad de elementos en la cola
+    MAX         //capacidad maxima
+
+
+
+PoneEnCola(unElemento)
+    si cantidad = MAX entonces
+        cola.redimensionar
+    cola[final] = unElemento
+    final <- (final + 1) mod MAX
+    cantidad <- cantidad + 1
+
+
+QuitaDeCola() 
+    si cantidad = 0 entonces
+        devolver nulo
+    elemento <- cola[frente]
+    frente <- (frente + 1) mod MAX
+    cantidad <- cantidad - 1
+    devolver  elemento
+

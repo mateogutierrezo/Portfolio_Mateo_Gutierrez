@@ -1,0 +1,1 @@
+La diferencia existe porque Integer ya es un valor hash natural, mientras que String necesita convertir datos complejos (caracteres) en un valor entero y evitar colisiones en estructuras hash. Cada implementación está optimizada para la naturaleza de los datos y su uso frecuente en colecciones hash como HashMap o HashSet.

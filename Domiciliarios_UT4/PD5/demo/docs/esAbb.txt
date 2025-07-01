@@ -1,0 +1,58 @@
+Verificar si el árbol es de búsqueda.
+Descripción: 
+si el nodo actual es nulo devuelve verdadero.
+si la clave del hijo izquierdo es mayor a la actual o la del hijo derecho es menor, devuelve falso.
+en otro caso devuelve el resultado lógico de aplicar el operador AND entre esAbb aplicado a los hijos izquierdo y derecho.
+
+Preondiciones:
+
+Postcondiciones:
+Devuelve verdadero es es abb, falso si no.
+
+casos de prueba:
+dado un arbol vacío
+
+si se inserta: -
+esAbb(root)
+devuelve: verdadero
+
+si se inserta: 5, 4 a la izquierda, 6 a la derecha de 5
+esAbb(root)
+devuelve: verdadero
+
+si se inserta: 5, 4 a la derecha, 6 a la izquierda de 5
+esAbb(root)
+devuelve: falso
+
+esAbbNodo(nodo) : devuelve booleano
+comienzo
+    si nodo.hijoIzq == nulo y nodo.hijoDer == nulo entonces
+        devolver verdadero;
+    siNoSi nodo.hijoIzq <> nulo && nodo.hijoDer <> nulo entonces
+        si nodo.etiqueta < nodo.hijoIzq.etiqueta o 
+                nodo.etiqueta > nodo.hijoDer.etiqueta entonces
+            devolver falso
+        finSi
+        devolver esAbb(nodo.hijoIzq) y esAbb(nodo.hijoDer)
+    siNoSi nodo.hijoIzq == nulo entonces    
+        si nodo.etiqueta > nodo.hijoDer.etiqueta entonces
+            devolver falso
+        finSi
+        devolver esAbb(nodo.hijoDer)
+    siNo
+        si nodo.etiqueta < nodo.hijoIzq.etiqueta entonces   
+            devolver falso
+        finSi
+        devolver esAbb(nodo.hijoIzq)
+    finSi
+fin
+
+esAbbArbol(root) : devuelve booleano
+comienzo
+    si root == nulo entonces 
+        devolver verdadero
+    finSi
+    devolver esAbbNodo(root)
+fin
+
+orden del tiempo de ejecución: O(n), en el peor caso debo recorrer todo el árbol para determinar si es abb o no.

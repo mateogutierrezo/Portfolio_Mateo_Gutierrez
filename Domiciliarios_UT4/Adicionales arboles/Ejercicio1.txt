@@ -1,0 +1,20 @@
+Tipo Alumno
+    CI: numérico
+    Nombre: alfanumérico
+    Apellido: alfanumérico
+    Carrrera: alfanumérico
+
+De TABB armarIndiceCarrrera (de tipo alfanumérico unaCarrera) devuelve TABB
+
+Lenguaje natural: 
+Se recorre el árbol buscando alumnos que tengan como atributo la carrera pasada por parámetro.
+En caso de coincidencia se llama a un método que inserte en un nuevo árbol ordenado según el apellido.
+
+Precondiciones:
+El árbol está ordenado por cédula de identidad.
+
+Postcondiciones:
+Devuelve un TABB con los alumnos pertenecientes a unaCarrera ordenados por apellido.
+En caso de no haber alumnos de esa carrera devuelve un árbol vacío.
+
+De TABB armarIndiceCarrrera (de tipo alfanumérico unaCarrera) devuelve TABB

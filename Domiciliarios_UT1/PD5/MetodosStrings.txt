@@ -1,0 +1,29 @@
+Métodos de String:
+
+- substring(int beginIndex): Devuelve la subcadena desde el índice dado hasta el final.
+- substring(int beginIndex, int endIndex): Devuelve la subcadena entre los índices dados.
+
+- split(String regex): Divide la cadena según el patrón.
+- split(String regex, int limit): Divide la cadena con un límite máximo de partes.
+
+- subSequence(int beginIndex, int endIndex): Devuelve una subsecuencia de la cadena.
+
+- trim(): Elimina los espacios en blanco al inicio y al final de la cadena.
+
+- toLowerCase(): Convierte la cadena a minúsculas.
+
+- toUpperCase(): Convierte la cadena a mayúsculas.
+
+- indexOf(char ch): Devuelve el índice de la primera aparición del carácter.
+- indexOf(String str): Devuelve el índice de la primera aparición de la subcadena.
+
+- lastIndexOf(char ch): Devuelve el índice de la última aparición del carácter.
+- lastIndexOf(String str): Devuelve el índice de la última aparición de la subcadena.
+
+- contains(CharSequence s): Devuelve true si la cadena contiene la secuencia especificada.
+
+- replace(char oldChar, char newChar): Reemplaza todas las ocurrencias del carácter.
+- replace(CharSequence target, CharSequence replacement): Reemplaza todas las ocurrencias de la secuencia.
+
+- replaceAll(String regex, String replacement): Reemplaza todas las ocurrencias que coinciden con el patrón.
+- replaceFirst(String regex, String replacement): Reemplaza la primera ocurrencia que coincide con el patrón.

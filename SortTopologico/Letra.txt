@@ -1,0 +1,19 @@
+Ejercicio: Planificación de cursos
+Un estudiante desea organizar su plan de estudios. Para ello, tiene una lista de cursos junto con las previaturas (es decir, cursos que deben cursarse antes que otros). 
+Tu tarea es determinar un orden válido para cursar todas las materias, cumpliendo con todas las restricciones dadas.
+
+Lista de cursos y previaturas:
+Curso	Previaturas
+A	-
+B	A
+C	A
+D	B, C
+E	C
+F	D, E
+
+Requisitos:
+Representa este sistema como un grafo dirigido.
+
+Aplica un ordenamiento topológico para obtener un orden válido de cursado.
+
+Escribe el pseudocódigo del algoritmo que utilizaste.

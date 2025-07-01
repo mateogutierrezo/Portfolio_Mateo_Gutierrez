@@ -1,0 +1,5 @@
+Para implementar Kruskal implementé el método estanConectados que retorna verdadero si dos vertices
+están conectados, para esto realiza una busqueda en profundidad.
+El problema es que esto hace que Kruskal sea O(V*E) en lugar de ser O(E*logE)
+Para solcuionar esto se podría implementar una clase union-find que permita determinar si dos elementos pertenecen 
+a un mismo componente y unir componentes eficientemente.

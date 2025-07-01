@@ -1,0 +1,21 @@
+INVERTIR COMPONENTES
+Dado un vector de enteros y dos indices i y j.
+Se invierten los componentes entre ambos indices.
+
+Pre:
+El vector contiene enteros.
+i y j son enteros no negativos.
+
+Post:
+Los elementos entre los indices i y j están invertidos.
+
+invertirComponentes(vector, i, j)
+    si i < j entonces
+        varibale = vector[i]
+        vector[i] = vector[j]
+        vector[j] = varibale
+        invertirComponentes(vector, i + 1, j - 1)
+    fin si
+fin
+
+Es O(j - i) debido a que la llamada recursiva se realiza aproximadamente (j-i)/2 veces

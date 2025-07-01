@@ -1,0 +1,26 @@
+sumaClaves
+
+Descripción:
+si el nodo actual es nulo devuelve 0,
+en otro caso devuelve la suma entre la clave del nodo actual 
+y el resultado de aplicar sumaClaves para los subárboles izquierdo y derecho
+
+Precondiciones:
+El árbol respeta las reglas de ABB.
+
+Postcondiciones:
+Se devuevle la la suma de las claves de todos los nodos.
+
+sumaCLavesNodo(nodo)
+comienzo
+    si nodo == nulo entonces
+        devolver 0
+    devolver nodo.clave + sumaCLavesNodo(nodo.hijoIzq) + sumaCLavesNodo(nodo.hijoDer)
+fin
+
+sumaClavesArbol(root)
+comienzo
+    devolver sumaCLavesNodo(root)
+fin
+
+orden de tiempo de ejecución O(n) en todos los casos, no hay otra que recorrer todos los nodos.

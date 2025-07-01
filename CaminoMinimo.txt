@@ -1,0 +1,46 @@
+Modificar el algoritmo BFS para que calcule la distancia mínima entre dos
+vértices dados, y que además nos permita recuperar un camino mínimo.
+
+
+
+
+
+
+
+funcion GD.BFS_CaminoMinimo(origen, destino):
+    crear cola Q
+    crear mapa distancia: Map<Nodo, Integer>
+    crear mapa predecesor: Map<Nodo, Nodo>
+
+    para cada nodo en grafo:
+        desvisitar nodo
+        distancia[nodo] ← ∞
+        predecesor[nodo] ← null
+
+    visitar origen
+    distancia[origen] ← 0
+    Q.encolar(origen)
+
+    mientras Q no esté vacía:
+        actual ← Q.desencolar()
+        
+        si actual == destino:
+            romper
+
+        para cada vecino en grafo.adyacentesDe(actual):
+            si vecino no está visitado:
+                visitar vecino
+                distancia[vecino] ← distancia[actual] + 1
+                predecesor[vecino] ← actual
+                Q.encolar(vecino)
+
+    si vecino no está visitado:
+        devolver "No hay camino"
+
+    camino ← lista vacía
+    nodo ← destino
+    mientras nodo ≠ null:
+        insertar nodo al principio de camino
+        nodo ← predecesor[nodo]
+
+    devolver distancia[destino], camino

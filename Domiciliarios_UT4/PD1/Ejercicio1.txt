@@ -1,0 +1,22 @@
+EJERCICIO 1
+
+Inserciones: T,Y,U,P,L,K,J,S,A,Z,X,C,V,N
+
+¿Cuál de las siguientes afirmaciones es correcta?
+a) El árbol tiene altura 7.
+b) “Y” es ancestro de “C”.
+c) “X” es descendiente de “P”.
+d) “S” es una hoja. CORRECTO
+
+En el árbol resultante (indica la respuesta correcta y analiza por qué las demás no lo son):
+a) El árbol tiene cinco hojas. CORRECTO
+b) “V” es descendiente de “S”
+c) “K” es hermano de “J”
+d) “A” y “X” están al mismo nivel
+
+Para imprimir las claves en orden lexicográfico basta con (indica la respuesta correcta y analiza
+por qué las demás no lo son)
+a) recorrer el árbol en PREORDEN.
+b) recorrer el árbol en POSTORDEN.
+c) recorrer el árbol en INORDEN. CORRECTO
+d) debe recorrerse el árbol POR NIVELES.

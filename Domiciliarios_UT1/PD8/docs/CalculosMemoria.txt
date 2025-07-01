@@ -1,0 +1,8 @@
+short (presionSanguinea y frecuenciaCardiaca): 4 bytes
+int (nivelAzucar): 4 bytes
+long (maximaFuerza): 8 bytes
+float (minimoTiempoEntreLatidos): 4 bytes
+double (bateriaRestante): 8 bytes
+String de hasta 8 caracteres (codifoFabricante): 8 bytes + 16 bytes
+
+Total: 4 + 4 + 8 + 4 + 8 + 24 = 52 bytes  

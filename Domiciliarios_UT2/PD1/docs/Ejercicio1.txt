@@ -1,0 +1,16 @@
+Ejercicio #1
+Analiza el orden del tiempo de ejecución del siguiente algoritmo:
+
+miFunción
+    Desde i = 1 hasta N-1 hacer
+        Desde j = N hasta i+1 hacer
+            Si arreglo[j].clave < arreglo[j-1].clave entonces
+                Intercambia(arreglo[j], arreglo[j-1])
+            Fin si
+        Fin desde
+    Fin desde
+Fin
+
+El primer bucle es O(n), es claro porque se itera n-1 veces.
+El segundo bucle es O(n), porque se itera n-i veces
+Por lo tanto el orden del tiempo de ejecución del algoritmo es O(n^2)

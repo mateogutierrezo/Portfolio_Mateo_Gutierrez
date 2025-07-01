@@ -1,0 +1,54 @@
+Solución en lenguaje natural:
+Comparar la etiqueta del primer elemento con la del segundo, luego con la del tercero y repetir hasta el final de la lista. 
+En caso de encontrar etiquetas iguales se debe eliminar uno de los elementos.
+De igual forma comparar el segundo elemento de la lista con los siguientes.
+Repetir el proceso con todos los elementos de la lista.
+
+seudocódigo:
+Comienzo
+    iterador1 <- lista.primero
+    mientras iterador1 != null hacer
+        iterador2 <- iterador1
+        mientras iterador2.siguiente != null hacer
+            si iterador1.valor == iterador2.siguiente.valor
+                entonces    
+                    lista.eliminar(iterador2.siguiente)
+                    iterador2 <- iterador2.siguiente
+            si no iterador2 <- iterador2.siguiente
+        fin mientras
+        iterador1 <- iterador1
+
+codigo en java:
+public void eliminarDuplicados() {
+        Nodo iterador1 = primero;
+        while (iterador1 != null) {
+            Nodo iterador2 = iterador1.siguiente;
+            while (iterador2 != null) {
+                if (iterador1.valor == iterador2.valor) {
+                    this.eliminar(iterador2);
+                    iterador2 = iterador2.siguiente; 
+                } else {
+                    iterador2 = iterador2.siguiente; 
+                }
+            }
+            iterador1 = iterador1.siguiente;
+        }
+    }
+
+public void eliminar(Nodo nodo) {
+        if (primero == null){
+            return;
+        }
+        if (primero == nodo) { 
+            primero = primero.siguiente;
+            return;
+        }
+        Nodo iterador = primero;
+        while (iterador.siguiente != null && iterador.siguiente != nodo) {
+            iterador = iterador.siguiente;
+        }
+        if (iterador.siguiente == nodo) {
+            iterador.siguiente = iterador.siguiente.siguiente;
+        }
+        
+    }

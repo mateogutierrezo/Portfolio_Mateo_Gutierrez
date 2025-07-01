@@ -1,0 +1,24 @@
+nodoTrie.insertar(palabra, aparicion)
+comienzo 
+	para cada letra en palabra hacer
+		hijo <- nodoTrie.hijos.buscarHijo(letra)
+		si hijo <> nulo entonces
+			nodoTrie <- hijo
+		siNo
+			nodo <- nuevoNodo(letra) 
+			nodoTrie.hijos.agregar(nodo)
+			nodoTrie <- nodo
+		finSi
+	finPara 
+	si nodoTrie.esPalabra() entonces 
+		nodoTrie.asterisco.agregar(aparicion)
+	siNo
+		nodoTrie.asterisco <- nuevo nodoAsterisco
+		nodoTrie.asterisco.agregar(aparicion)
+	finSi
+fin
+
+nodoTrie.esPalabra() devuelve verdadero si el nodo tiene 
+una referencia a un nodo asterisco.
+
+hijos.buscarHijo(letra) devuelve una referencia al hijo que contenga letra.

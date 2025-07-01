@@ -1,0 +1,127 @@
+CrearNodo: O(1)
+Crea un nodo con la clave pasada por parámetro.
+
+Precondiciones
+-
+
+Postcondiciones
+Devuelve un nodo creado con la clave. El atributo siguiente apunta a nulo.
+
+CrearNodo (TClave clave)
+    this.clave <- clave
+    this.siguiente <- nulo
+
+
+CrearLista: O(1)
+Crea una lista vacía
+
+Precondiciones
+-
+
+Postcondiciones
+Devuelve una lista vacía, primero es nulo.
+
+CrearLista ()
+    primero <- nulo
+
+
+Insertar: O(n)
+Agrega un nodo al final de la lista.
+
+Precondiciones
+El nodo a agregar no es nulo.
+El nodo no se encuentra en la lista.
+
+Precondiciones
+Agrega un nodo al final de la lista.
+Aumenta en 1 la cantidad de elementos.
+
+Insertar (Nodo nodo)
+    si esVacia() entonces
+        primero <- nodo
+    si no
+        otroNodo <- primero
+        mientras otroNodo.siguiente != nulo hacer
+            otroNodo <- otroNodo.siguiente
+        fin mientras
+        otroNodo.siguiente <- nodo
+    fin si
+fin
+
+
+Buscar: O(n)
+Busca un elemento de la lista por su clave.
+Si no lo encuentra devuelve nulo
+
+Precondiciones
+-
+
+Postcondiciones
+Devuelve el nodo si lo encuentra, si no devuelve nulo
+
+Buscar (TClave clave)
+    si esVacia() entonces
+        devolver nulo
+    fin si
+    otroNodo <- primero
+    mientras otroNodo != nulo hacer
+        si otroNodo.clave = clave entonces
+            devolver otroNodo 
+        fin si 
+        otroNodo <- otroNodo.siguiente
+    fin mientras
+    devolver nulo
+fin
+
+
+Listar: O(n)
+Imprime todos los elementos de la lista en consola
+
+Precondiciones
+-
+
+Postcondiciones
+Imprime todos los elementos de la lista en consola
+si la lista está vacía imprime un mensaje informándolo.
+
+Imprimir ()
+    si esVacia() entonces
+        imprimir("La lista está vacía.")
+    si no   
+        otroNodo <- primero
+        mientras otroNodo != nulo hacer
+            imprimir(otroNodo.clave)
+            otroNodo <- otroNodo.siguiente
+        fin mientras
+    fin si
+fin
+
+
+Eliminar: O(n)
+Elimina un nodo por su clave.
+
+Precondiciones
+-
+
+Postcondiciones
+Elimina el elemento de la lista si existe, disminuyendo en 1 la cantidad de elementos.
+Si lo elimina devuelve true, false si no
+
+Eliminar(TClave clave)
+    si esVacia() entonces
+         devolver false
+    fin si
+    si primero.clave = clave entonces
+        primero <- primero.siguiente
+        devolver true
+    fin si
+    otroNodo <- primero
+    mientras otroNodo.siguiente != nulo hacer
+        si otroNodo.siguiente.clave = clave entonces
+            otroNodo.siguiente <- otroNodo.siguiente.siguiente
+            devolver true
+        fin si
+        otroNodo <- otroNodo.siguiente
+    fin mientras
+    devolver false
+fin

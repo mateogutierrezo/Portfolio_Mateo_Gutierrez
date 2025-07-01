@@ -1,0 +1,34 @@
+Queremos construir una red eléctrica que conecte todas las casas y la subestación eléctrica, 
+usando la menor cantidad de cable posible. Para eso, modelamos cada casa y la subestación como
+vértices de un grafo no dirigido, donde cada arista representa una posible conexión entre dos 
+puntos con su respectiva distancia (costo). Luego, aplicamos el algoritmo de Kruskal para seleccionar
+las conexiones más económicas que conecten todos los puntos sin ciclos.
+
+Clase TVertice
+    etiqueta (nombre de la casa o subestación)
+    adyacentes: lista de adyacencias
+    visitado : booleano
+
+Clase TArista
+    origen, destino
+    costo (longitud del cable)
+
+Clase TGrafoNoDirigido
+    vertices: mapa de etiquetas a vértices
+    aristas: lista de todas las conexiones posibles
+
+Auxiliar: Union-Find
+    Map<Comparable, Comparable>: para seguimiento de conjuntos disjuntos
+
+
+function kruskal(grafo):
+  Crear un conjunto vacío para el AAM			O(1)
+  Crear un conjunto disjunto para cada vértice		O(V)
+  Ordenar todas las aristas por costo ascendente    	O(E*logE)
+  Para cada arista (u, v) en orden ascendente:		O(E)
+    Si u y v están en conjuntos disjuntos:		O(α(V)) ≈ O(1)
+      Añadir (u, v) al MST				O(1)
+      Unir los conjuntos de u y v			O(α(V)) ≈ O(1)
+  Retornar el MST					O(1)
+
+el algoritmo es O(E*logE) en el peor caso.

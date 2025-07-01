@@ -1,0 +1,28 @@
+HashMap por defecto tiene una capacidad inicial de 16
+el índice se calcula:
+indice = hashCode & (capacidad - 1) = hashCode & 15
+
+clave		hashCode()	índice = hashCode & 15
+"Hola"		2241166		2241166 & 15 = 6
+"HolaMundo"	-1560302971	-1560302971 & 15 = 5
+"HashMap"	-862545270	-862545270 & 15 = 10
+"Colecciones"	-1542243071	-1542243071 & 15 = 1
+
+diagrama luego de las inserciones: 
+
+table[0] : 
+table[1] : [Colecciones -> value]
+table[2] : 
+table[3] : 
+table[4] : 
+table[5] : [HolaMundo -> value]
+table[6] : [Hola -> value]
+table[7] : 
+table[8] : 
+table[9] : 
+table[10]: [HashMap -> value]
+table[11]: 
+table[12]: 
+table[13]: 
+table[14]: 
+table[15]: 

@@ -1,0 +1,50 @@
+Listar todas las hojas cada una con su nivel.
+Descripción: 
+si el nodo es nulo no hace nada
+si el nodo no tiene hijo, es hoja, se imprime el nodo y el nivel actual,
+si no se recorre recursivamente el árbol aumentado el nivel.
+
+Precondiciones:
+el árbol respeta las reglas abb.
+
+Postcondiciones:
+se listan todas las hojas y su nivel.
+
+Casos de prueba:
+dado un abb vacío:
+si se inserta: 5, 3, 7, 8
+listarHojasArbol(root)
+devuelve: 
+3 2
+8 3
+
+si se inserta: 2, 4, 3, 5, 1
+listarHojasArbol(root)
+devuelve: 
+1 2
+3 3
+5 3
+
+listarHojasNodo(nodo, nivel) : devuelve string
+comienzo
+    resultado <- string vacío
+    si nodo.hijoIzq == nulo y nodo.hijoDer == nulo entonces
+        resultado <- resultado + "(nodo,nivel)"
+    finSi
+    si nodo.hijoIzq <> nulo entonces
+        resultado <- listarHojasNodo(nodo.hijoIzq, nivel + 1)
+    finSi
+    si nodo.hijoDer <> nulo entonces
+        resultado <- listarHojasNodo(nodo.hijoDer, nivel + 1)
+    finSi
+    devolver resultado
+fin
+
+listarHojasArbol(root) : devuelve string
+comienzo 
+    si root == nulo entonces 
+        devolver nulo
+    devolver listarHojasNodo(root, 1)
+fin
+
+orden del tiempo de ejecución: O(n) porque debe recorrer todo el árbol en busca de sus hojas.

@@ -1,0 +1,45 @@
+Obtener la menor clave del árbol.
+Se recorre recursivamente el subárbol derecho hasta que seaa nulo.
+Se retorna el nodo actual.
+
+Precondiciónes:
+Respeta las regas de los abb.
+
+Postcondiciones:
+Devuelve la mayor clave del árbol.
+Si el árbol está vacío devuelve nulo.
+
+Casos de prueba:
+Dado un abb vacío:
+
+se inserta: -
+devuelve: nulo
+
+se inserta: 1
+devuelve: 1
+
+se inserta: 1, 2, 3
+devuelve: 3
+
+se inserta: 10, 5, 11, 14, 13
+devuelve: 14
+
+mayorClaveNodo(nodo) : devuelve TClave
+comienzo
+    si nodo.hijoDer != nulo entonces
+        devolver mayorClave(nodo.hijoDer)
+    finSi
+    devolver nodo;
+fin
+
+mayorClaveArbol(root) : devuelve TClave
+comienzo
+    si root == nulo entonces
+        devolver nulo
+    finSi
+    devolver mayorClave(root)
+fin
+
+El orden del tiempo de ejecución es O(n)
+En el peor caso se debe recorrer todos los elementos 
+del árbol.

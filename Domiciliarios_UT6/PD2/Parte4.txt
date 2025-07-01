@@ -1,0 +1,18 @@
+nodoTrie.buscar(palabra): devuelve array de enteros
+comienzo 
+    para cada letra en palabra hacer    
+        hijo <- nodoTrie.hijos.buscarHijo(letra)
+        si hijo <> nulo entonces
+            nodoTrie <- hijo
+        siNo 
+            devolver nulo
+	finSi
+    finPara
+    si nodoTrie.esPalabra entonces
+    	devolver nodoTrie.asterisco.apariciones
+    finSi
+    devolver nulo
+fin
+
+asterisco.apariciones: atributo del nodoAstrisco que contiene una referencia
+a la lista de apariciones.

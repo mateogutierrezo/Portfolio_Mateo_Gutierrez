@@ -1,0 +1,41 @@
+tieneCiclos a nivel de grafo
+LN: devuelve de aplicar tieneCiclos al primer vertice del grafo.
+
+pre: -
+post: devuelve verdadero si existe al menos un ciclo, false si no.
+
+TGrafoDirigido.tieneCiclos() : booleano
+comienzo
+    desvisitarTodosLosVertices()
+    para cada vertice no visitado hacer
+        camino <- nuevo camino con origen en vertice
+        si vertice.tieneCiclos(camino) entonces
+            devolver verdadero
+        finSi
+    finPara
+    devolver falso
+fin
+
+
+
+tieneCiclos a nivel de vertice
+LN: se hace una busqueda en profundidad, si se encuentra una arista de retroceso, el grafo tiene un ciclo.
+
+pre: TCamino no es nulo
+post: devuelve verdadero si existe al menos un ciclo, false si no.
+
+TVertice.tieneCiclos(caminoPrevio) : booleano
+comienzo
+    visitar()
+    para cada adyacencia hacer
+        si el destino se encuentra en el camino entonces
+            devolver verdadero
+        si el destino no está visitado entonces
+            caminoPrevio.agregar(adyacencia)
+            si destino.tieneCiclos(caminoPrevio) entonces
+             devolver verdadero
+            caminoPrevio.eliminar(adyacencia)
+        finSi
+    finPara
+    devolver falso
+fin

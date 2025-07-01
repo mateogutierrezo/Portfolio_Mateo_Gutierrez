@@ -1,0 +1,23 @@
+FACTORIAL
+Lenguaje natural:
+Dado un número natural n.
+Si n es igual a 0, el factorial es 1 (caso base).
+En el resto de los casos el factorial se obtiene multiplicando n por el factorial de n - 1 (llamada recursiva).
+El resultado es un número natural que representa n!.
+
+Precondiciones:
+n es un número natural.
+
+Postcondiciones:
+Se devuelve el factorial del número n.
+
+factorial(n)
+    si n == 0 entonces
+        devolver 1
+    si no 
+        devolver factorial(n - 1)
+    fin si
+fin
+
+El tiempo de ejecución es O(n) porque la función se llama a sí misma una vez por cada número desde n hasta 0
+y cada llamada realiza una operación constante.

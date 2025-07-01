@@ -1,0 +1,23 @@
+pre: v y w son vértices del grafo.
+booleano conectados (v, w de tipo vértice) 
+COM
+    devolver v.hayCamino(w)
+FIN
+
+booleano hayCamino(w de tipo vértice)
+COM
+    SI fueVisitado() ENTONCES
+        devolver falso
+    FINSI
+    visitar()  
+    SI este == w ENTONCES
+        devolver verdadero
+    FINSI
+    PARA CADA adyacente ady HACER
+        SI ady.destino.hayCamino(w) ENTONCES
+            devolver verdadero
+        FINSI
+    FINPARA
+
+    devolver falso
+FIN

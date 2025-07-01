@@ -1,0 +1,54 @@
+Obtener la cantidad de nodos de un nivel dado (por parámetro) 
+Descripción: 
+si el nodo actual es nulo devolver 0
+si el nivel dado por parametro es 1 devolver 1,
+en otro caso devolver el resultado de la suma entre aplicar cantidadEnNivel
+a los subárboles izquierdo y derecho.
+
+Precondiciones:
+El árbol respeta las reglas abb.
+El nivel dado por parámetro es mayor a 0.
+
+Precondiciones:
+Retorna la cantidad de nodos en el nivel dado por parámetro.
+
+Casos de prueba:
+Dado un abb vacío:
+si se inserta: 10, 5, 2, 1, 3, 6, 7, 8
+cantidadEnNivelArbol(1)
+devuelve 1
+
+cantidadEnNivelArbol(3)
+devuelve 2
+
+cantidadEnNivelArbol(4)
+devuelve 3
+
+cantidadEnNivelArbol(6)
+devuelve 0
+
+cantidadEnNivelNodo(nodo, nivel) : devuelve entero
+comienzo
+    resultado <- 0
+    si nivel == 1 entonces 
+        resultado <- resultado + 1
+    finSi
+    si nodo.hijoIzq <> nulo entonces
+        resultado <- resultado + cantidadEnNivelNodo(nodo.hijoIzq, nivel - 1)
+    finSi
+    si nodo.hijoDer <> nulo entonces
+        resultado <- resultado + cantidadEnNivelNodo(nodo.hijoDer, nivel - 1)
+    finSi
+    devolver resultado
+fin
+
+cantidadEnNivelArbol(root, nivel): devuelve entero
+comienzo
+    si root == nulo entonces
+        devolver 0
+    finSi
+    devolver cantidadEnNivelNodo(root, nivel)
+fin
+
+Orden de tiempo de ejecución: O(n)
+en el peor de los casos recorre todos los nodos si se le pide por el último nivel o un nivel inexistente.

@@ -1,0 +1,42 @@
+contarHojas
+
+
+método nodo:
+
+Descripción:
+si el nodo actual no tiene hijos devuelve uno,
+en otro caso devuelve la suma de aplicar contarHojas
+a los subárboles izquierdo y derecho.
+
+Precondiciones:
+El árbol respeta las reglas de ABB.
+
+Postcondiciones:
+Se devuevle la cantidad de hojas que el árbol posee.
+
+contarHojasNodo(nodo)
+comienzo
+    si nodo == nulo entonces 
+        devolver 0
+    si nodo.hijoIzq == nulo y nodo.hijoDer == nulo entonces
+        devolver 1
+    siNo
+        devolver contarHojasNodo(nodo.hijoIzq) + contarHojasNodo(nodo.hijoDer)
+    finSi
+fin
+
+
+método árbol:
+
+Descripción:
+Devuelve el valor de aplicar contarHojasNodo a la raíz
+
+Precondiciones y Postcondiciones iguales.
+
+contarHojasArbol(root)
+comienzo
+    devolver contarHojasNodo(root)
+fin
+
+Orden de tiempo de ejecución
+es O(n) porque se debe recorrer todo el árbol para determinar la cantidad de hojas.
