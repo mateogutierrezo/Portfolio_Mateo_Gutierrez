@@ -1,0 +1,22 @@
+private int[] ordenarPorShell(int[] datosParaClasificar) {
+	int j;		O(1)
+	int[] incrementos = new int[] { 3223, 358, 51, 10, 3, 1 };	O(1)
+
+	for (int inc : incrementos) {	O(1)
+		if (inc < datosParaClasificar.length) {		O(1)
+			for (int i = 0; i < datosParaClasificar.length; i++) {		O(n - inc)
+				int temp = datosParaClasificar[i];	O(1)
+				j = i;		O(1)
+				while (j >= inc && datosParaClasificar[j - inc] > temp) {	O(n)
+					datosParaClasificar[j] = datosParaClasificar[j - inc];	O(1)
+					j -= inc;	O(1)
+				}
+				datosParaClasificar[j] = temp;		O(1)
+			}
+		}
+	}
+	return datosParaClasificar;	O(1)
+}
+
+O(n^2)
+
