@@ -1,0 +1,4 @@
+CS10 y CS60 están conectados
+CS30 y CS80 no están conectados
+CS80 y CS90 están conectados
+mayor medición: 999.6713884961163 fecha: 1700519108
